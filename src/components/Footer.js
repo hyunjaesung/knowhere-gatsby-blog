@@ -8,7 +8,8 @@ const SFooter = styled.footer`
   margin-top: 70px;
   font-size: 1.2em;
   text-decoration: none;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Slabo 27px', serif;
+  font-weight: 700;
 `;
 
 class Footer extends React.Component {
