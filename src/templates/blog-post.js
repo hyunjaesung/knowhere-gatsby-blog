@@ -12,6 +12,7 @@ import { rhythm, scale } from '../utils/typography';
 import { loadFontsForCode } from '../utils/i18n';
 
 import styled from 'styled-components';
+import '../fonts/fonts-shared.css';
 
 const Title = styled.h3`
   font-size: 1.8em;

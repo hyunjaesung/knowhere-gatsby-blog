@@ -10,6 +10,7 @@ import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 
 import styled from 'styled-components';
+import '../fonts/fonts-shared.css';
 
 const Title = styled.h3`
   font-size: 2.1em;
