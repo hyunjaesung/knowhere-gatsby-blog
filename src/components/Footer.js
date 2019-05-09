@@ -8,7 +8,7 @@ const SFooter = styled.footer`
   margin-top: 70px;
   font-size: 1.2em;
   text-decoration: none;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-weight: 700;
 `;
 

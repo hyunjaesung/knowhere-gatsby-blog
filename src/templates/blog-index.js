@@ -13,8 +13,9 @@ import styled from 'styled-components';
 
 const Title = styled.h3`
   font-size: 2.1em;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   margin-bottom: 6px;
+  font-weight: 800;
 `;
 
 const Date = styled.div`
