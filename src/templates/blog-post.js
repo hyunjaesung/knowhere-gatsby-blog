@@ -14,59 +14,6 @@ import { loadFontsForCode } from '../utils/i18n';
 import styled from 'styled-components';
 import '../fonts/fonts-shared.css';
 
-const Title = styled.h3`
-  font-size: 1.8em;
-  font-family: 'Do Hyeon', sans-serif;
-  font-weight: 800;
-`;
-
-const Title3 = styled.h3`
-  font-family: 'Righteous', cursive;
-  font-size: 2em;
-`;
-
-const Date = styled.div`
-  font-size: 10px;
-  font-family: 'Noto Sans KR', sans-serif;
-  opacity: 0.7;
-  font-weight: 200;
-`;
-
-const MainText = styled.div`
-  font-size: 1em;
-  font-family: 'Noto Sans KR', sans-serif;
-  text-align: justify;
-  h2 {
-    font-size: 1.3em;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-    text-align: left;
-  }
-  h3 {
-    font-size: 1.3em;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-    text-align: left;
-  }
-  h4 {
-    font-size: 1.3em;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-    text-align: left;
-  }
-  h5 {
-    font-size: 1.3em;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-weight: bold;
-    text-align: left;
-  }
-`;
-
-const Nav = styled.nav`
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 700;
-`;
-
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;
@@ -99,21 +46,39 @@ class BlogPostTemplate extends React.Component {
         <main>
           <article>
             <header>
-              <Title style={{ color: 'var(--textTitle)' }}>
+              <h3
+                style={{
+                  color: 'var(--textTitle)',
+                  fontSize: '1.8em',
+                  fontFamily: 'Do Hyeon, sans-serif',
+                  fontWeight: '800',
+                }}
+              >
                 {post.frontmatter.title}
-              </Title>
-              <Date
+              </h3>
+              <div
                 style={{
                   ...scale(-1 / 5),
                   display: 'block',
                   marginBottom: rhythm(1),
                   marginTop: rhythm(-4 / 5),
+                  fontSize: '1em',
+                  fontFamily: 'Noto Sans KR, sans-serif',
+                  opacity: '0.7',
+                  fontWeight: '200',
                 }}
               >
                 {formatPostDate(post.frontmatter.date, lang)}
-              </Date>
+              </div>
             </header>
-            <MainText dangerouslySetInnerHTML={{ __html: html }} />
+            <div
+              style={{
+                fontSize: '1em',
+                fontFamily: 'Noto Sans KR, sans-serif',
+                textAlign: 'justify',
+              }}
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
             <footer />
           </article>
         </main>
@@ -124,9 +89,11 @@ class BlogPostTemplate extends React.Component {
               fontFamily: systemFont,
             }}
           />
-          <Title3
+          <h3
             style={{
               marginTop: rhythm(0.25),
+              fontFamily: 'Righteous, cursive',
+              fontSize: '2em',
             }}
           >
             <Link
@@ -138,9 +105,14 @@ class BlogPostTemplate extends React.Component {
             >
               Knowhere
             </Link>
-          </Title3>
+          </h3>
           <Bio />
-          <Nav>
+          <div
+            style={{
+              fontFamily: 'Noto Sans KR, sans-serif',
+              fontWeight: '700',
+            }}
+          >
             <a href="/">Back To Main</a>
             {/* <ul
               style={{
@@ -170,7 +142,7 @@ class BlogPostTemplate extends React.Component {
                 )}
               </li>
             </ul> */}
-          </Nav>
+          </div>
         </aside>
       </Layout>
     );
