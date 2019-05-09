@@ -8,6 +8,8 @@ import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
 import styled from 'styled-components';
 
+import '../fonts/fonts-shared.css';
+
 const Title = styled.h1`
   font-family: 'Righteous', cursive;
   font-size: 0.3rem;
