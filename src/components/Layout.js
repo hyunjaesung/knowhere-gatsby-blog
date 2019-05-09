@@ -12,7 +12,7 @@ import '../fonts/fonts-shared.css';
 
 const Title = styled.h1`
   font-family: 'Righteous', cursive;
-  font-size: 0.3rem;
+  font-size: 0.3em;
 `;
 
 const PostTitle = styled.h1`
@@ -60,7 +60,7 @@ class Layout extends React.Component {
     // 포스트 화면 일때
     else {
       return (
-        <Title
+        <PostTitle
           style={{
             ...scale(1.3),
             marginBottom: 0,
@@ -78,7 +78,7 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </Title>
+        </PostTitle>
       );
     }
   }
