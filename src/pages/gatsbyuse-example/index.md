@@ -52,10 +52,10 @@ _providing_ guidance and _learning_
 
 ## 코드작성
 
-````
+
 `이용해서 작성, 여러개 쓰면 더 큰 컨테이너도 만들어진다
 
-
+````
 ```jsx{3,6}
 class Button extends React.Component {
 state = {
@@ -71,8 +71,8 @@ return (
 }
 }
 ```
-
 ````
+
 
 ### 강조표시
 

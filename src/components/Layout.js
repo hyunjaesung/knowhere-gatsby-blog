@@ -10,10 +10,12 @@ import styled from 'styled-components';
 
 const Title = styled.h1`
   font-family: 'Righteous', cursive;
+  font-size: 0.3rem;
 `;
 
-const PostTitle = styled.h3`
+const PostTitle = styled.h1`
   font-family: 'Righteous', cursive;
+  font-size: 0.3em;
 `;
 
 class Layout extends React.Component {
@@ -35,7 +37,7 @@ class Layout extends React.Component {
       return (
         <Title
           style={{
-            ...scale(0.75),
+            ...scale(1.3),
             marginBottom: 0,
             marginTop: 0,
           }}
@@ -58,7 +60,7 @@ class Layout extends React.Component {
       return (
         <Title
           style={{
-            ...scale(0.75),
+            ...scale(1.3),
             marginBottom: 0,
             marginTop: 0,
             lineHeight: '2.625rem',
@@ -104,7 +106,7 @@ class Layout extends React.Component {
           style={{
             marginLeft: 'auto',
             marginRight: 'auto',
-            maxWidth: rhythm(24),
+            maxWidth: rhythm(30),
             padding: `2.625rem ${rhythm(3 / 4)}`,
           }}
         >

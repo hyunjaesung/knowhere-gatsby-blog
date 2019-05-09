@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const SFooter = styled.footer`
   margin-top: 70px;
-  font-size: 8px;
+  font-size: 1.2em;
   text-decoration: none;
   font-family: 'Noto Sans KR', sans-serif;
 `;

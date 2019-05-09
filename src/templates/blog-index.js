@@ -12,13 +12,13 @@ import { rhythm } from '../utils/typography';
 import styled from 'styled-components';
 
 const Title = styled.h3`
-  font-size: rhythm(1);
+  font-size: 2.1em;
   font-family: 'Do Hyeon', sans-serif;
   margin-bottom: 6px;
 `;
 
 const Date = styled.div`
-  font-size: 10px;
+  font-size: 1.2em;
   font-family: 'Noto Sans KR', sans-serif;
   opacity: 0.7;
   font-weight: 200;
@@ -26,8 +26,9 @@ const Date = styled.div`
 `;
 
 const MainText = styled.div`
-  font-size: 12px;
+  font-size: 1.2em;
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 600;
   text-align: justify;
 `;
 

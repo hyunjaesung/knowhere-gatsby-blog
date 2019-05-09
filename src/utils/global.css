@@ -20,6 +20,7 @@
 body {
   --pink: #a29bfe;
   background-color: var(--bg);
+  width: 100%;
 }
 
 body.light {

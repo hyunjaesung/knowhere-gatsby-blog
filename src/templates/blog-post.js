@@ -14,7 +14,7 @@ import { loadFontsForCode } from '../utils/i18n';
 import styled from 'styled-components';
 
 const Title = styled.h3`
-  font-size: 30px;
+  font-size: 1.8em;
   font-family: 'Do Hyeon', sans-serif;
 `;
 
@@ -30,23 +30,31 @@ const Date = styled.div`
 `;
 
 const MainText = styled.div`
-  font-size: 12px;
+  font-size: 1em;
   font-family: 'Noto Sans KR', sans-serif;
   text-align: justify;
   h2 {
-    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
     text-align: left;
   }
   h3 {
-    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
     text-align: left;
   }
   h4 {
-    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
     text-align: left;
   }
   h5 {
-    font-family: 'Do Hyeon', sans-serif;
+    font-size: 1.3em;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
     text-align: left;
   }
 `;
