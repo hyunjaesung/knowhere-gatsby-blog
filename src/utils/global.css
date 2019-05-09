@@ -4,6 +4,7 @@ body {
   --pink: #a29bfe;
   background-color: var(--bg);
   width: 100%;
+  height: 100%;
 }
 
 body.light {
