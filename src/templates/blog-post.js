@@ -46,7 +46,7 @@ class BlogPostTemplate extends React.Component {
               <h3
                 style={{
                   color: 'var(--textTitle)',
-                  fontSize: '1.8em',
+                  fontSize: '2.3em',
                   fontFamily: 'Do Hyeon, sans-serif',
                   fontWeight: '800',
                 }}
@@ -70,7 +70,7 @@ class BlogPostTemplate extends React.Component {
             </header>
             <div
               style={{
-                fontSize: '1em',
+                fontSize: '1.2em',
                 fontFamily: 'Noto Sans KR, sans-serif',
                 textAlign: 'justify',
               }}
@@ -89,7 +89,7 @@ class BlogPostTemplate extends React.Component {
           <h3
             style={{
               marginTop: rhythm(0.25),
-              fontFamily: 'Righteous, cursive',
+              fontFamily: 'Do Hyeon, sans-serif',
               fontSize: '2em',
             }}
           >

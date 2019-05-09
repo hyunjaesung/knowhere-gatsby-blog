@@ -30,7 +30,15 @@ class Bio extends React.Component {
           }}
         />
         <div class="blogby" style={{ maxWidth: 310 }}>
-          <Blogby>Blog by SteveSung</Blogby>
+          <div
+            style={{
+              fontSize: '2em',
+              fontFamily: 'Just Another Hand, cursive',
+              fontWeight: 500,
+            }}
+          >
+            Blog by SteveSung
+          </div>
         </div>
       </div>
     );

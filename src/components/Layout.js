@@ -31,8 +31,8 @@ class Layout extends React.Component {
             ...scale(1.3),
             marginBottom: 0,
             marginTop: 0,
-            fontFamily: 'Righteous, cursive',
-            fontSize: '2.5em',
+            fontFamily: 'Do Hyeon, sans-serif',
+            fontSize: '4em',
           }}
         >
           <Link
@@ -53,7 +53,7 @@ class Layout extends React.Component {
       return (
         <h1
           style={{
-            fontFamily: 'Righteous, cursive',
+            fontFamily: 'Do Hyeon, sans-serif',
             fontSize: '2.5em',
             ...scale(1.3),
             marginBottom: 0,

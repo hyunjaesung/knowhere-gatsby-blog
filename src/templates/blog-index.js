@@ -31,7 +31,7 @@ class BlogIndexTemplate extends React.Component {
                   <header>
                     <h3
                       style={{
-                        fontSize: '2.1em',
+                        fontSize: '2.5em',
                         fontFamily: 'Do Hyeon, sans-serif',
                         marginBottom: '6px',
                         fontWeight: '800',
