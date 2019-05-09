@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'Knowhere',
     author: 'Steve Sung',
-    description: 'Something by SteveSung. I explain with words and code.',
-    siteUrl: 'https://overreacted.io',
+    description: 'Something by SteveSung.',
+    siteUrl: 'https://distracted-bohr-37b3ab.netlify.com/',
     social: {
       twitter: 'nothing',
     },
