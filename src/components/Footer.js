@@ -2,20 +2,18 @@ import React from 'react';
 
 import { rhythm } from '../utils/typography';
 
-import styled from 'styled-components';
-
-const SFooter = styled.footer`
-  margin-top: 70px;
-  font-size: 1.2em;
-  text-decoration: none;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 700;
-`;
-
 class Footer extends React.Component {
   render() {
     return (
-      <SFooter>
+      <footer
+        style={{
+          marginTop: '70px',
+          fontSize: '1.2em',
+          textDecoration: 'none',
+          fontFamily: 'Noto Sans KR, sans-serif',
+          fontWeight: '700',
+        }}
+      >
         <a
           href="https://github.com/hyunjaesung"
           target="_blank"
@@ -31,7 +29,7 @@ class Footer extends React.Component {
         >
           wordpress
         </a>
-      </SFooter>
+      </footer>
     );
   }
 }

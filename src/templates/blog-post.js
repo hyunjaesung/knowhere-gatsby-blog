@@ -11,9 +11,6 @@ import { formatPostDate, formatReadingTime } from '../utils/helpers';
 import { rhythm, scale } from '../utils/typography';
 import { loadFontsForCode } from '../utils/i18n';
 
-import styled from 'styled-components';
-import '../fonts/fonts-shared.css';
-
 const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif`;

@@ -9,36 +9,6 @@ import SEO from '../components/SEO';
 import get from 'lodash/get';
 import { rhythm } from '../utils/typography';
 
-import styled from 'styled-components';
-import '../fonts/fonts-shared.css';
-
-const Title = styled.h3`
-  font-size: 2.1em;
-  font-family: 'Do Hyeon', sans-serif;
-  margin-bottom: 6px;
-  font-weight: 800;
-`;
-
-const Date = styled.div`
-  font-size: 1.2em;
-  font-family: 'Noto Sans KR', sans-serif;
-  opacity: 0.7;
-  font-weight: 200;
-  margin-bottom: 6px;
-`;
-
-const MainText = styled.div`
-  font-size: 1.2em;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 600;
-  text-align: justify;
-`;
-
-const Nav = styled.nav`
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 700;
-`;
-
 class BlogIndexTemplate extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title');
@@ -59,7 +29,14 @@ class BlogIndexTemplate extends React.Component {
               return (
                 <article key={node.fields.slug}>
                   <header>
-                    <Title>
+                    <h3
+                      style={{
+                        fontSize: '2.1em',
+                        fontFamily: 'Do Hyeon, sans-serif',
+                        marginBottom: '6px',
+                        fontWeight: '800',
+                      }}
+                    >
                       <Link
                         style={{
                           boxShadow: 'none',
@@ -69,12 +46,26 @@ class BlogIndexTemplate extends React.Component {
                       >
                         {title}
                       </Link>
-                    </Title>
-                    <Date>
+                    </h3>
+                    <div
+                      style={{
+                        fontSize: '1.2em',
+                        fontFamily: 'Noto Sans KR, sans-serif',
+                        opacity: '0.7',
+                        fontWeight: '200',
+                        marginBottom: '6px',
+                      }}
+                    >
                       {formatPostDate(node.frontmatter.date, langKey)}
-                    </Date>
+                    </div>
                   </header>
-                  <MainText
+                  <div
+                    style={{
+                      fontSize: '1.2em',
+                      fontFamily: 'Noto Sans KR, sans-serif',
+                      fontWeight: '600',
+                      textAlign: 'justify',
+                    }}
                     dangerouslySetInnerHTML={{
                       __html: node.frontmatter.spoiler,
                     }}

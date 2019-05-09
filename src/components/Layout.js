@@ -6,19 +6,8 @@ import Helmet from 'react-helmet';
 import { rhythm, scale } from '../utils/typography';
 import sun from '../assets/sun.png';
 import moon from '../assets/moon.png';
-import styled from 'styled-components';
 
 import '../fonts/fonts-shared.css';
-
-const Title = styled.h1`
-  font-family: 'Righteous', cursive;
-  font-size: 0.3em;
-`;
-
-const PostTitle = styled.h1`
-  font-family: 'Righteous', cursive;
-  font-size: 0.3em;
-`;
 
 class Layout extends React.Component {
   state = {
@@ -37,11 +26,13 @@ class Layout extends React.Component {
     if (location.pathname === rootPath) {
       // 인덱스 화면일때
       return (
-        <Title
+        <h1
           style={{
             ...scale(1.3),
             marginBottom: 0,
             marginTop: 0,
+            fontFamily: 'Righteous, cursive',
+            fontSize: '2.5em',
           }}
         >
           <Link
@@ -54,14 +45,16 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </Title>
+        </h1>
       );
     }
     // 포스트 화면 일때
     else {
       return (
-        <PostTitle
+        <h1
           style={{
+            fontFamily: 'Righteous, cursive',
+            fontSize: '2.5em',
             ...scale(1.3),
             marginBottom: 0,
             marginTop: 0,
@@ -78,7 +71,7 @@ class Layout extends React.Component {
           >
             {title}
           </Link>
-        </PostTitle>
+        </h1>
       );
     }
   }
