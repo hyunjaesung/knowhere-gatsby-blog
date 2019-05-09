@@ -1,22 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css?family=Righteous|Anton|Just+Another+Hand|Noto+Sans+KR|Oswald|Do+Hyeon'); */
 
-@font-face {
-  font-family: 'Do Hyeon';
-  src: url(../fonts/DoHyeon-Regular.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Just Another Hand';
-  src: url(../fonts/JustAnotherHand-Regular.ttf) format('truetype');
-}
-@font-face {
-  font-family: 'Noto Sans KR';
-  src: url(../fonts/NotoSansKR-Regular.otf) format('truetype');
-}
-@font-face {
-  font-family: 'Righteous';
-  src: url(../fonts/Righteous-Regular.ttf) format('truetype');
-}
-
 body {
   --pink: #a29bfe;
   background-color: var(--bg);

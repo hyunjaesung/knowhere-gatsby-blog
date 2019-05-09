@@ -13,7 +13,7 @@ import styled from 'styled-components';
 
 const Title = styled.h3`
   font-size: 2.1em;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Do Hyeon', sans-serif;
   margin-bottom: 6px;
   font-weight: 800;
 `;
