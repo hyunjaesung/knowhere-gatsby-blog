@@ -50,30 +50,35 @@ class BlogIndexTemplate extends React.Component {
           <Bio />
         </aside>
         <main>
-          {posts.map(({ node }) => {
-            const title = get(node, 'frontmatter.title') || node.fields.slug;
-            return (
-              <article key={node.fields.slug}>
-                <header>
-                  <Title>
-                    <Link
-                      style={{
-                        boxShadow: 'none',
-                      }}
-                      to={node.fields.slug}
-                      rel="bookmark"
-                    >
-                      {title}
-                    </Link>
-                  </Title>
-                  <Date>{formatPostDate(node.frontmatter.date, langKey)}</Date>
-                </header>
-                <MainText
-                  dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}
-                />
-              </article>
-            );
-          })}
+          {posts &&
+            posts.map(({ node }) => {
+              const title = get(node, 'frontmatter.title') || node.fields.slug;
+              return (
+                <article key={node.fields.slug}>
+                  <header>
+                    <Title>
+                      <Link
+                        style={{
+                          boxShadow: 'none',
+                        }}
+                        to={node.fields.slug}
+                        rel="bookmark"
+                      >
+                        {title}
+                      </Link>
+                    </Title>
+                    <Date>
+                      {formatPostDate(node.frontmatter.date, langKey)}
+                    </Date>
+                  </header>
+                  <MainText
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.spoiler,
+                    }}
+                  />
+                </article>
+              );
+            })}
         </main>
         <Footer />
       </Layout>
