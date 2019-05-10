@@ -14,6 +14,15 @@ Wordpress2016.overrideThemeStyles = () => ({
   'a.gatsby-resp-image-link': {
     boxShadow: 'none',
   },
+  h4: {
+    fontFamily: 'Noto Sans KR',
+  },
+  h3: {
+    fontFamily: 'Noto Sans KR',
+  },
+  h2: {
+    fontFamily: 'Noto Sans KR',
+  },
   // These two are for gatsby-remark-autolink-headers:
   'a.anchor': {
     boxShadow: 'none',

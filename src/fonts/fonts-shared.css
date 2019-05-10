@@ -18,3 +18,15 @@
   font-family: 'Righteous';
   src: url(./files/Righteous-Regular.ttf) format('truetype');
 }
+
+@font-face {
+  font-display: swap;
+  font-family: 'NanumSquare';
+  src: url(./files/NanumSquare_acR.ttf) format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'NanumSquareEB';
+  src: url(./files/NanumSquare_acEB.ttf) format('truetype');
+}

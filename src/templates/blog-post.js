@@ -47,7 +47,7 @@ class BlogPostTemplate extends React.Component {
                 style={{
                   color: 'var(--textTitle)',
                   fontSize: '2.3em',
-                  fontFamily: 'Do Hyeon, sans-serif',
+                  fontFamily: 'NanumSquareEB, sans-serif',
                   fontWeight: '800',
                 }}
               >
@@ -68,6 +68,7 @@ class BlogPostTemplate extends React.Component {
                 {formatPostDate(post.frontmatter.date, lang)}
               </div>
             </header>
+
             <div
               style={{
                 fontSize: '1.2em',
