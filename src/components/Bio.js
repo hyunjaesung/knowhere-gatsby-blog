@@ -32,7 +32,7 @@ class Bio extends React.Component {
         <div class="blogby" style={{ maxWidth: 310 }}>
           <div
             style={{
-              fontSize: '2em',
+              fontSize: '1.7em',
               fontFamily: 'Just Another Hand, cursive',
               fontWeight: 500,
             }}

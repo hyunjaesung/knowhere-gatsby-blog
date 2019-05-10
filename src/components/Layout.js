@@ -32,7 +32,7 @@ class Layout extends React.Component {
             marginBottom: 0,
             marginTop: 0,
             fontFamily: 'Do Hyeon, sans-serif',
-            fontSize: '4em',
+            fontSize: '3.3em',
           }}
         >
           <Link
