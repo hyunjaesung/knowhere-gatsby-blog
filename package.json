@@ -57,7 +57,8 @@
     "build": "gatsby build",
     "now-build": "gatsby build",
     "dry": "yarn build && cp now.json public/ && cd public && now",
-    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/hyunjaesung/knowhere-gatsby-blog"
+    "deploy": "gatsby build && gh-pages -d public -b master -r https://github.com/hyunjaesung/knowhere-gatsby-blog",
+    "gitpublish": "git commit -m && git push -u origin master"
   },
   "husky": {
     "hooks": {

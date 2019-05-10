@@ -47,7 +47,7 @@ class BlogPostTemplate extends React.Component {
                 style={{
                   color: 'var(--textTitle)',
                   fontSize: '2.3em',
-                  fontFamily: 'NanumSquareEB, sans-serif',
+                  fontFamily: 'Do Hyeon, sans-serif',
                   fontWeight: '800',
                 }}
               >

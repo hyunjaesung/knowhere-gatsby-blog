@@ -30,3 +30,10 @@
   font-family: 'NanumSquareEB';
   src: url(./files/NanumSquare_acEB.ttf) format('truetype');
 }
+@font-face {
+  font-display: swap;
+  font-family: 'NanumSquareREB';
+  src: url(./files/NanumSquareRoundEB.ttf) format('truetype');
+}
+
+/* @import url(‘//cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css’); */
