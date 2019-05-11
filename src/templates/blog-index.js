@@ -1,5 +1,5 @@
 import { Link, graphql } from 'gatsby';
-import { formatPostDate } from '../utils/helpers';
+import { formatPostDate, formatTag } from '../utils/helpers';
 
 import Bio from '../components/Bio';
 import Footer from '../components/Footer';
@@ -31,7 +31,7 @@ class BlogIndexTemplate extends React.Component {
                   <header>
                     <h3
                       style={{
-                        fontSize: '2.5em',
+                        fontSize: '2.2em',
                         fontFamily: 'Do Hyeon, sans-serif',
                         marginBottom: '6px',
                         fontWeight: '600',
@@ -57,6 +57,7 @@ class BlogIndexTemplate extends React.Component {
                       }}
                     >
                       {formatPostDate(node.frontmatter.date, langKey)}
+                      {formatTag(node.frontmatter.tags)}
                     </div>
                   </header>
                   <div
@@ -105,6 +106,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             spoiler
+            tags
           }
         }
       }

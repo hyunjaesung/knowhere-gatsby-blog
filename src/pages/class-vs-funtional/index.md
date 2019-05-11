@@ -2,7 +2,7 @@
 title: '클래스 컴포넌트 vs 함수 컴포넌트'
 date: '2019-05-10'
 spoiler: '클래스 컴포넌트와 함수형 컴포넌트의 차이에 관한 글'
-tags: ['web', 'react']
+tags: ['React']
 --- 
 
 

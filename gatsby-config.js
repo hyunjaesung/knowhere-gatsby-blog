@@ -95,6 +95,7 @@ module.exports = {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.spoiler,
                   date: edge.node.frontmatter.date,
+                  tags: edge.node.frontmatter.tags,
                   url: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [{ 'content:encoded': html + postText }],
@@ -106,7 +107,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: {fields: { langKey: {eq: "en"}}}
+                  filter: { frontmatter: { tags: { in: [$tag] } } }
                 ) {
                   edges {
                     node {
@@ -119,6 +120,7 @@ module.exports = {
                         title
                         date
                         spoiler
+                        tags
                       }
                     }
                   }

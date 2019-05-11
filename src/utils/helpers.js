@@ -2,6 +2,10 @@ export function formatReadingTime(minutes) {
   return ` 🌏${minutes} min read`;
 }
 
+export function formatTag(tag) {
+  return ` about ${tag}`;
+}
+
 // `lang` is optional and will default to the current user agent locale
 export function formatPostDate(date, lang) {
   if (typeof Date.prototype.toLocaleDateString !== 'function') {

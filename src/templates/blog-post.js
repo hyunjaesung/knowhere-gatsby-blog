@@ -7,7 +7,7 @@ import Bio from '../components/Bio';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-import { formatPostDate, formatReadingTime } from '../utils/helpers';
+import { formatPostDate, formatTag } from '../utils/helpers';
 import { rhythm, scale } from '../utils/typography';
 import { loadFontsForCode } from '../utils/i18n';
 
@@ -66,6 +66,7 @@ class BlogPostTemplate extends React.Component {
                 }}
               >
                 {formatPostDate(post.frontmatter.date, lang)}
+                {formatTag(post.frontmatter.tags)}
               </div>
             </header>
 
@@ -165,6 +166,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         spoiler
+        tags
       }
       fields {
         slug
