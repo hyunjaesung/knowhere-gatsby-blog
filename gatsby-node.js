@@ -30,13 +30,15 @@ exports.createPages = ({ graphql, actions }) => {
   });
 
   return new Promise((resolve, reject) => {
+    const blogIndex = path.resolve('./src/templates/blog-index.js');
     const blogPost = path.resolve('./src/templates/blog-post.js');
+    const tagTemplate = path.resolve('src/templates/tags.js');
 
     // Create index pages for all supported languages
     Object.keys(supportedLanguages).forEach(langKey => {
       createPage({
         path: langKey === 'en' ? '/' : `/${langKey}/`,
-        component: path.resolve('./src/templates/blog-index.js'),
+        component: blogIndex,
         context: {
           langKey,
         },
@@ -60,6 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    tags
                   }
                 }
               }
@@ -101,6 +104,29 @@ exports.createPages = ({ graphql, actions }) => {
         //   {}
         // );
 
+        //tag
+
+        // let tags = [];
+
+        // // Iterate through each post, putting all found tags into `tags`
+        // _.each(posts, edge => {
+        //   if (_.get(edge, 'node.frontmatter.tags')) {
+        //     tags = tags.concat(edge.node.frontmatter.tags);
+        //   }
+        // });
+        // // Eliminate duplicate tags
+        // tags = _.uniq(tags);
+
+        // tags.forEach(tag => {
+        //   createPage({
+        //     path: `/tags/${_.kebabCase(tag)}/`,
+        //     component: tagTemplate,
+        //     context: {
+        //       tag,
+        //     },
+        //   });
+        // });
+
         const defaultLangPosts = posts.filter(
           ({ node }) => node.fields.langKey === 'en'
         );
@@ -114,7 +140,7 @@ exports.createPages = ({ graphql, actions }) => {
           // const translations =
           //   translationsByDirectory[_.get(post, 'node.fields.directoryName')] ||
           //   [];
-
+          console.log(post.node.fields);
           createPage({
             path: post.node.fields.slug,
             component: blogPost,
@@ -122,6 +148,7 @@ exports.createPages = ({ graphql, actions }) => {
               slug: post.node.fields.slug,
               previous,
               next,
+              tags: post.node.frontmatter.tags,
               // translations,
               // translatedLinks: [],
             },

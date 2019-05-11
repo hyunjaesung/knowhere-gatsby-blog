@@ -85,7 +85,7 @@ module.exports = {
               `;
 
                 let html = edge.node.html;
-                // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
+
                 html = html
                   .replace(/href="\//g, `href="${siteUrl}/`)
                   .replace(/src="\//g, `src="${siteUrl}/`)
@@ -107,7 +107,6 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [frontmatter___date] }
-                  filter: { frontmatter: { tags: { in: [$tag] } } }
                 ) {
                   edges {
                     node {
@@ -136,8 +135,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `Knowhere`,
+        short_name: `Knowhere`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,
