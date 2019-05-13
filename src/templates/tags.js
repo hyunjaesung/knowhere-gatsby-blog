@@ -16,7 +16,11 @@ class BlogIndexTemplate extends React.Component {
 
     const posts = this.props.pageContext.posts;
 
-    console.log(posts);
+    const {
+      location: { pathname },
+    } = this.props;
+
+    const path = pathname.split('/');
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -30,51 +34,62 @@ class BlogIndexTemplate extends React.Component {
               const title = get(node, 'frontmatter.title') || node.fields.slug;
 
               return (
-                <article key={node.fields.slug}>
-                  <header>
-                    <h3
-                      style={{
-                        fontSize: '2.2em',
-                        fontFamily: 'Do Hyeon, sans-serif',
-                        marginBottom: '6px',
-                        fontWeight: '600',
-                      }}
-                    >
-                      <Link
+                node.frontmatter.tags.includes(path[2]) && (
+                  <article key={node.fields.slug}>
+                    <header>
+                      <h3
                         style={{
-                          boxShadow: 'none',
+                          fontSize: '2.2em',
+                          fontFamily: 'Do Hyeon, sans-serif',
+                          marginBottom: '6px',
+                          fontWeight: '600',
                         }}
-                        to={node.fields.slug}
-                        rel="bookmark"
                       >
-                        {title}
-                      </Link>
-                    </h3>
+                        <Link
+                          style={{
+                            boxShadow: 'none',
+                          }}
+                          to={node.fields.slug}
+                          rel="bookmark"
+                        >
+                          {title}
+                        </Link>
+                      </h3>
+                      <div
+                        style={{
+                          fontSize: '1.2em',
+                          fontFamily: 'Noto Sans KR, sans-serif',
+                          opacity: '0.7',
+                          fontWeight: '200',
+                          marginBottom: '6px',
+                        }}
+                      >
+                        {formatPostDate(node.frontmatter.date, langKey)}
+                        {' about '}
+                        <Link
+                          style={{
+                            boxShadow: 'none',
+                          }}
+                          to={`/tags/${node.frontmatter.tags[0]}/`}
+                          rel="bookmark"
+                        >
+                          {node.frontmatter.tags}
+                        </Link>
+                      </div>
+                    </header>
                     <div
                       style={{
                         fontSize: '1.2em',
                         fontFamily: 'Noto Sans KR, sans-serif',
-                        opacity: '0.7',
-                        fontWeight: '200',
-                        marginBottom: '6px',
+                        fontWeight: '600',
+                        textAlign: 'justify',
                       }}
-                    >
-                      {formatPostDate(node.frontmatter.date, langKey)}
-                      {formatTag(node.frontmatter.tags)}
-                    </div>
-                  </header>
-                  <div
-                    style={{
-                      fontSize: '1.2em',
-                      fontFamily: 'Noto Sans KR, sans-serif',
-                      fontWeight: '600',
-                      textAlign: 'justify',
-                    }}
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.spoiler,
-                    }}
-                  />
-                </article>
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.spoiler,
+                      }}
+                    />
+                  </article>
+                )
               );
             })}
         </main>

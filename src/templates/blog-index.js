@@ -58,7 +58,16 @@ class BlogIndexTemplate extends React.Component {
                       }}
                     >
                       {formatPostDate(node.frontmatter.date, langKey)}
-                      {formatTag(node.frontmatter.tags)}
+                      {' about '}
+                      <Link
+                        style={{
+                          boxShadow: 'none',
+                        }}
+                        to={`/tags/${node.frontmatter.tags[0]}/`}
+                        rel="bookmark"
+                      >
+                        {node.frontmatter.tags}
+                      </Link>
                     </div>
                   </header>
                   <div

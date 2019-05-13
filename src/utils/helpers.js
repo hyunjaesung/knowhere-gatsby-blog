@@ -1,9 +1,11 @@
+import { Link } from 'gatsby';
+
 export function formatReadingTime(minutes) {
   return ` 🌏${minutes} min read`;
 }
 
 export function formatTag(tag) {
-  return ` about ${tag}`;
+  return;
 }
 
 // `lang` is optional and will default to the current user agent locale
