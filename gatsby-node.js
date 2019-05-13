@@ -61,6 +61,8 @@ exports.createPages = ({ graphql, actions }) => {
                     directoryName
                   }
                   frontmatter {
+                    date
+                    spoiler
                     title
                     tags
                   }
@@ -106,26 +108,30 @@ exports.createPages = ({ graphql, actions }) => {
 
         //tag
 
-        // let tags = [];
+        let tags = [];
 
         // // Iterate through each post, putting all found tags into `tags`
-        // _.each(posts, edge => {
-        //   if (_.get(edge, 'node.frontmatter.tags')) {
-        //     tags = tags.concat(edge.node.frontmatter.tags);
-        //   }
-        // });
-        // // Eliminate duplicate tags
-        // tags = _.uniq(tags);
+        _.each(posts, edge => {
+          if (_.get(edge, 'node.frontmatter.tags')) {
+            tags = tags.concat(edge.node.frontmatter.tags);
+          }
+        });
+        // Eliminate duplicate tags
+        tags = _.uniq(tags);
 
-        // tags.forEach(tag => {
-        //   createPage({
-        //     path: `/tags/${_.kebabCase(tag)}/`,
-        //     component: tagTemplate,
-        //     context: {
-        //       tag,
-        //     },
-        //   });
-        // });
+        Object.keys(supportedLanguages).forEach(langKey => {
+          tags.forEach(tag => {
+            createPage({
+              path: `/tags/${_.kebabCase(tag)}/`,
+              component: tagTemplate,
+              context: {
+                tag,
+                langKey: 'en',
+                posts: posts,
+              },
+            });
+          });
+        });
 
         const defaultLangPosts = posts.filter(
           ({ node }) => node.fields.langKey === 'en'

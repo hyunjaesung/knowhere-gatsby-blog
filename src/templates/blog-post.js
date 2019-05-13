@@ -18,6 +18,7 @@ const systemFont = `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
 class BlogPostTemplate extends React.Component {
   componentDidMount() {
     console.log('did mounted!');
+    console.log(this.props);
   }
 
   render() {

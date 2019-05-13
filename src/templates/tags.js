@@ -1,82 +1,118 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import { formatPostDate, formatTag } from '../utils/helpers';
 
-// // Components
-// import { Link, graphql } from 'gatsby';
+import Bio from '../components/Bio';
+import Footer from '../components/Footer';
+import Layout from '../components/Layout';
+import React from 'react';
+import SEO from '../components/SEO';
+import get from 'lodash/get';
+import { rhythm } from '../utils/typography';
 
-// const Tags = ({ pageContext, data }) => {
-//   const { tag } = pageContext;
-//   const { edges, totalCount } = data.allMarkdownRemark;
-//   const tagHeader = `${totalCount} post${
-//     totalCount === 1 ? '' : 's'
-//   } tagged with "${tag}"`;
+class BlogIndexTemplate extends React.Component {
+  render() {
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
+    const langKey = this.props.pageContext.langKey;
 
-//   return (
-//     <div>
-//       <h1>{tagHeader}</h1>
-//       <ul>
-//         {edges.map(({ node }) => {
-//           const { slug } = node.fields;
-//           const { title } = node.frontmatter;
-//           return (
-//             <li key={slug}>
-//               <Link to={slug}>{title}</Link>
-//             </li>
-//           );
-//         })}
-//       </ul>
-//       {/*
-//               This links to a page that does not yet exist.
-//               We'll come back to it!
-//             */}
-//       <Link to="/tags">All tags</Link>
-//     </div>
-//   );
-// };
+    const posts = this.props.pageContext.posts;
 
-// Tags.propTypes = {
-//   pageContext: PropTypes.shape({
-//     tag: PropTypes.string.isRequired,
-//   }),
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       totalCount: PropTypes.number.isRequired,
-//       edges: PropTypes.arrayOf(
-//         PropTypes.shape({
-//           node: PropTypes.shape({
-//             frontmatter: PropTypes.shape({
-//               title: PropTypes.string.isRequired,
-//             }),
-//             fields: PropTypes.shape({
-//               slug: PropTypes.string.isRequired,
-//             }),
-//           }),
-//         }).isRequired
-//       ),
-//     }),
-//   }),
-// };
+    console.log(posts);
 
-// export default Tags;
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO />
+        <aside>
+          <Bio />
+        </aside>
+        <main>
+          {posts &&
+            posts.map(({ node }) => {
+              const title = get(node, 'frontmatter.title') || node.fields.slug;
 
-// export const pageQuery = graphql`
-//   query($tag: String) {
-//     allMarkdownRemark(
-//       limit: 2000
-//       sort: { fields: [frontmatter___date], order: DESC }
-//       filter: { frontmatter: { tags: { in: [$tag] } } }
-//     ) {
-//       totalCount
-//       edges {
-//         node {
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             title
-//           }
-//         }
-//       }
-//     }
-//   }
-// `;
+              return (
+                <article key={node.fields.slug}>
+                  <header>
+                    <h3
+                      style={{
+                        fontSize: '2.2em',
+                        fontFamily: 'Do Hyeon, sans-serif',
+                        marginBottom: '6px',
+                        fontWeight: '600',
+                      }}
+                    >
+                      <Link
+                        style={{
+                          boxShadow: 'none',
+                        }}
+                        to={node.fields.slug}
+                        rel="bookmark"
+                      >
+                        {title}
+                      </Link>
+                    </h3>
+                    <div
+                      style={{
+                        fontSize: '1.2em',
+                        fontFamily: 'Noto Sans KR, sans-serif',
+                        opacity: '0.7',
+                        fontWeight: '200',
+                        marginBottom: '6px',
+                      }}
+                    >
+                      {formatPostDate(node.frontmatter.date, langKey)}
+                      {formatTag(node.frontmatter.tags)}
+                    </div>
+                  </header>
+                  <div
+                    style={{
+                      fontSize: '1.2em',
+                      fontFamily: 'Noto Sans KR, sans-serif',
+                      fontWeight: '600',
+                      textAlign: 'justify',
+                    }}
+                    dangerouslySetInnerHTML={{
+                      __html: node.frontmatter.spoiler,
+                    }}
+                  />
+                </article>
+              );
+            })}
+        </main>
+        <Footer />
+      </Layout>
+    );
+  }
+}
+
+export default BlogIndexTemplate;
+
+export const pageQuery = graphql`
+  query($langKey: String!) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+    allMarkdownRemark(
+      filter: { fields: { langKey: { eq: $langKey } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+            langKey
+          }
+          timeToRead
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            spoiler
+            tags
+          }
+        }
+      }
+    }
+  }
+`;

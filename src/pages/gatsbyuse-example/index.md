@@ -2,7 +2,7 @@
 title: 'Gatsbyjs Markup 작성'
 date: '2019-05-09'
 spoiler: 'Gatsbyjs Markup 작성에 관한 글'
-tags: ['Gatsbyjs']
+tags: ['gatsbyjs']
 --- 
 
 ### 헤더정보
