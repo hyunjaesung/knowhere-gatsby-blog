@@ -35,9 +35,9 @@ _providing_ guidance and _learning_
 ```
 
 ### 점찍기
-
+```
 -
-
+```
 ### 강조하기
 
 ```
