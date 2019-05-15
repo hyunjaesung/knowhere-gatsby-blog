@@ -13,27 +13,5 @@
   font-family: 'Noto Sans KR';
   src: url(./files/NotoSansKR-Regular.otf) format('truetype');
 }
-@font-face {
-  font-display: swap;
-  font-family: 'Righteous';
-  src: url(./files/Righteous-Regular.ttf) format('truetype');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'NanumSquare';
-  src: url(./files/NanumSquare_acR.ttf) format('truetype');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'NanumSquareEB';
-  src: url(./files/NanumSquare_acEB.ttf) format('truetype');
-}
-@font-face {
-  font-display: swap;
-  font-family: 'NanumSquareREB';
-  src: url(./files/NanumSquareRoundEB.ttf) format('truetype');
-}
 
 /* @import url(‘//cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css’); */
