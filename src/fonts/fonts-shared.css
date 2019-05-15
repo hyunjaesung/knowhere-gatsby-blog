@@ -11,7 +11,5 @@
 @font-face {
   font-display: swap;
   font-family: 'Noto Sans KR';
-  src: url(./files/NotoSansKR-Regular.otf) format('truetype');
+  src: url('') format('truetype');
 }
-
-/* @import url(‘//cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css’); */
